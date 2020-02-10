@@ -1,0 +1,18 @@
+{
+    "name": "coolblue/http-client-middleware",
+    "description": "A middleware solution for PSR-18 compliant http clients.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "psr/http-client": "^1.0",
+        "psr/http-message": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Coolblue\\Http\\Client\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

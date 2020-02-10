@@ -13,12 +13,10 @@ This might be solved by using a solution similar to the middleware defined in [P
 
 ## Installation
 
-```bash
-composer require coolblue/http-client-middleware
-```
+Coming soon.
 
 ## Usage 
-Middleware needs to comply to the interface `\Coolblue\Client\MiddlewareInterface`:
+Middleware needs to comply to the interface `\Coolblue\Http\Client\MiddlewareInterface`:
 
 ```php
 <?php

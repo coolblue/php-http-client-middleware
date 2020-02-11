@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ruleset name="PHP_CodeSniffer">
+    <arg name="basepath" value="."/>
+    <arg name="colors"/>
+    <arg value="s"/>
+
+    <rule ref="PSR12" />
+
+    <file>src/</file>
+    <file>tests/</file>
+</ruleset>

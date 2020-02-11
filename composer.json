@@ -3,6 +3,7 @@
     "description": "A middleware solution for PSR-18 compliant http clients.",
     "type": "library",
     "license": "MIT",
+    "keywords": ["psr", "psr-18", "http", "http-client", "middleware"],
     "require": {
         "php": "^7.2",
         "psr/http-client": "^1.0",

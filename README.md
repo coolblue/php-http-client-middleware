@@ -13,7 +13,9 @@ This might be solved by using a solution similar to the middleware defined in [P
 
 ## Installation
 
-Coming soon.
+```bash
+composer require coolblue/http-client-middleware 
+```
 
 ## Usage 
 Middleware needs to comply to the interface `\Coolblue\Http\Client\MiddlewareInterface`:

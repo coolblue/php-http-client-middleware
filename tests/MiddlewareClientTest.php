@@ -8,12 +8,15 @@ use Coolblue\Http\Client\MiddlewareClient;
 use Coolblue\Http\Client\MiddlewareInterface;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 final class MiddlewareClientTest extends TestCase
 {
+    use ProphecyTrait;
+
     public function testHandlingOfMiddlewareInCorrectOrder(): void
     {
         $order = [];

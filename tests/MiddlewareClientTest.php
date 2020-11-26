@@ -8,6 +8,7 @@ use Coolblue\Http\Client\MiddlewareClient;
 use Coolblue\Http\Client\MiddlewareInterface;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\Prophet;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -18,10 +19,12 @@ final class MiddlewareClientTest extends TestCase
     {
         $order = [];
 
-        $request = $this->prophesize(RequestInterface::class);
-        $response = $this->prophesize(ResponseInterface::class);
+        $prophet = new Prophet();
 
-        $middlewareOne = $this->prophesize(MiddlewareInterface::class);
+        $request = $prophet->prophesize(RequestInterface::class);
+        $response = $prophet->prophesize(ResponseInterface::class);
+
+        $middlewareOne = $prophet->prophesize(MiddlewareInterface::class);
         $middlewareOne->process(Argument::type(RequestInterface::class), Argument::type(ClientInterface::class))
             ->shouldBeCalled()
             ->will(function (array $arguments) use (&$order) {
@@ -32,7 +35,7 @@ final class MiddlewareClientTest extends TestCase
                 return $response;
             });
 
-        $middlewareTwo = $this->prophesize(MiddlewareInterface::class);
+        $middlewareTwo = $prophet->prophesize(MiddlewareInterface::class);
         $middlewareTwo->process(Argument::type(RequestInterface::class), Argument::type(ClientInterface::class))
             ->shouldBeCalled()
             ->will(function (array $arguments) use (&$order) {
@@ -44,7 +47,7 @@ final class MiddlewareClientTest extends TestCase
                 return $response;
             });
 
-        $client = $this->prophesize(ClientInterface::class);
+        $client = $prophet->prophesize(ClientInterface::class);
         $client->sendRequest(Argument::type(RequestInterface::class))
             ->shouldBeCalledOnce()
             ->will(function () use (&$order, $response) {

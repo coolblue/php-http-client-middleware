@@ -1,6 +1,6 @@
 # HTTP Client middleware
 
-HTTP Client middleware is a middleware solution for [PSR-18 (HTTP Client)](http://www.php-fig.org/psr/psr-18). 
+HTTP Client middleware is a middleware solution for [PSR-18 (HTTP Client)](http://www.php-fig.org/psr/psr-18). test
 
 This package contains both a middleware interface as well as a ready to use HTTP Client that is capable of handling middleware.
 
